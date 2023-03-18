@@ -4,72 +4,77 @@ using namespace std;
 
 int main()
 {
-    int N, M, i, n, tomb[100], tumb[100], S=0, ujS=0, Sjegy, a=0;
+    int n, i, S, lkkt, tomb[100], min1, min2, min3, max1, max2;
+    cout << "(5 < n < 100)" << endl;
+    cout << "n= ";
+    cin >> n;
 
-    cout << "Elso tomb hossza: ";
-    cin >> N;
-
-    if (N > 100 || N < 0)
+    for (i=0; i<n; i++)
     {
-        cout << "100-nal kissebb, 0-nal nagyobb szamot adjon meg!";
+        cout << "tomb[" << i << "]= ";
+        cin >> tomb[i];
     }
-    else
+
+    min1 = tomb[0];
+    min2 = tomb[1];
+    min3 = tomb[2];
+    max1 = tomb[3];
+    max2 = tomb[4];
+
+    for (i=0; i<n; i++)
     {
 
-        for (i=0; i<N; i++)
+        if(max1 < tomb[i])
         {
-            cout << "tomb[" << i << "]= ";
-            cin >> tomb[i];
-        }
-
-        cout << "Masodik tomb hossza: ";
-        cin >> M;
-
-        if (M > 100 || M < 0)
-        {
-            cout << "100-nal kissebb, 0-nal nagyobb szamot adjon meg!";
+            max2 = max1;
+            max1 = tomb[i];
         }
         else
         {
-            for (i=0; i<M; i++)
+            if(max2 < tomb[i] && tomb[i] != max1)
             {
-                cout << "tumb[" << i << "]= ";
-                cin >> tumb[i];
+                max2 = tomb[i];
             }
+        }
 
-            if (N<=M)
+        if(min1 > tomb[i])
+        {
+            min3 = min2;
+            min2 = min1;
+            min1 = tomb[i];
+        }
+        else
+        {
+            if(min2 > tomb[i] && tomb[i] != min1)
             {
-                n = N;
+                min3 = min2;
+                min2 = tomb[i];
             }
             else
             {
-                n = M;
-            }
-                for (i=0; i<n; i++)
-                {
-                    if (tomb[i]==tumb[i])
-                    {
-                        S = S + tomb[i];
-                        a = a + 1;
-                    }
-                }
-
-            while (S>0)
-            {
-                Sjegy = S % 10;
-                S = S / 10;
-                ujS = ujS * 10 + Sjegy;
-            }
-
-            if (a != 0)
-            {
-                cout << "A kozos elemek osszegenek tukorkepe: " << ujS;
-            }
-            else
-            {
-                cout << "Nincsenek kozos elemek.";
+                if(min3 > tomb[i] && tomb[i] != min1 && tomb[i] != min2)
+                    min3 = tomb[i];
             }
         }
     }
+
+    lkkt = min3 * max2;
+
+    while(min3 != max2)
+    {
+        if(min3 < max2)
+        {
+            max2 -= min3;
+        }
+        else
+        {
+            min3 -= max2;
+        }
+    }
+
+    lkkt /= min3;
+
+    cout << "lkkt - lnko = " << lkkt - min3;
+
     return 0;
 }
