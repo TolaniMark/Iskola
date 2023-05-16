@@ -30,7 +30,7 @@ int main()
                 p=1;
             }
         }
-        k++;
+        k--;
     }
     while(p==1);
 
