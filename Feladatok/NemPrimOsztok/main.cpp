@@ -13,9 +13,9 @@ int main()
     for (int i = n - 1; i >= 1; i--)
     {
         prim = true;
-        if (n%i==0)
+        if (n %i == 0) //ha osztja
         {
-            for( int b = 2; b < i; b++)
+            for( int b = 2; b < i; b++) //megmondjuk prim-e az oszto
             {
                 if (i % b== 0)
                 {
@@ -23,7 +23,7 @@ int main()
                 }
             }
         }
-        if (prim == false && i % 2 != 0)
+        if (prim == false && i % 2 != 0)// ha teljesülnek a feltételek, kiirjuk
         {
             cout << i << " ";
         }
