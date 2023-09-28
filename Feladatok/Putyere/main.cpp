@@ -18,7 +18,7 @@ int main()
                 k = k * x;
                 p++;
             }
-            if (k==n)
+            if (k == n)
             {
                 break;
             }
