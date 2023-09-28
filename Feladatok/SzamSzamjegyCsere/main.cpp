@@ -16,19 +16,19 @@ int main()
 
     while (n>0)
     {
-    int szamjegy = n%10;
-    n=n/10;
+        int szamjegy = n%10;
+        n=n/10;
 
-    if (pos != p)
-    {
-    aux = aux + szamjegy * hatvany;
-    }
-    else
-    {
-    aux = aux + x * hatvany;
-    }
-    hatvany *= 10;
-    pos++;
+        if (pos != p)
+        {
+            aux = aux + szamjegy * hatvany;
+        }
+        else
+        {
+            aux = aux + x * hatvany;
+        }
+        hatvany *= 10;
+        pos++;
     }
     cout << aux << endl;
 
