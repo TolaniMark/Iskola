@@ -4,24 +4,27 @@ using namespace std;
 
 int main()
 {
-    int n, i, j, s=0;
+    int n, x=2, p=0, k=1;
 
     cout << "n= ";
     cin >> n;
 
-    for(i = 9; i<n; i++)
+    for (x=2; x<=n; x++)
     {
-        for(j = 1; j <= i; j++)
+        if (n%x==0)
         {
-            if (i % j == 0 && j % 2 != 0)
-                s++;
+            while(k<n)
+            {
+                k=k*x;
+                p++;
+            }
+            if (k==n)
+            {
+                break;
+            }
         }
+    }
+    cout << "x= " << x << endl << "p= " << p;
 
-        if (s == 3)
-        {
-            cout << i << " ";
-        }
-        s=0;
-    }
     return 0;
 }
