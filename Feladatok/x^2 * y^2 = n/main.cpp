@@ -11,7 +11,6 @@ int main()
     cout << "n= ";
     cin >> n;
 
-
     for (x=n-1; x>1; x--)
     {
         for (y=x; y<n; y++)
@@ -35,7 +34,6 @@ int main()
         y = 0;
     }
     cout << " x = " << x1 << endl << "y = " << y1;
-
 
     return 0;
 }
