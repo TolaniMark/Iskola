@@ -1,8 +1,8 @@
-prim algoritmus
 
-oldj feladatokat me meghassz
-
-számjegzrebontás, minden második primszam kiirasa valameddig
-
-érettségi III/1. feladatok
-
+   for (sor=0; sor<=N; sor++)
+   
+       for (oszlop=0; oszlop<=N; oszlop++)
+       {
+           cout << "M[" << sor << "][" << oszlop << "]= ";
+       }
+   }
