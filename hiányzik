@@ -1,8 +1,0 @@
-
-   for (sor=0; sor<=N; sor++)
-   
-       for (oszlop=0; oszlop<=N; oszlop++)
-       {
-           cout << "M[" << sor << "][" << oszlop << "]= ";
-       }
-   }
