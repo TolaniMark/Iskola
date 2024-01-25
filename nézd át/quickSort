@@ -1,0 +1,54 @@
+void quickSort(int arr[], int balindex, int jobbindex) {
+
+      int i = balindex, j = jobbindex;
+
+      int tmp;
+    //megkeressuk a rendezesre varo tomb kozepső elemet
+      int pivot = arr[(balindex + jobbindex) / 2];
+
+
+
+      /* rendezzuk ugy a tombot,
+      hogy bal oldalon a pivot helyen levő elemnel csak kisebb
+      a jobb oldalon pedig csak nagyobb elemek legyenek */
+
+      while (i <= j) {
+
+            while (arr[i] < pivot)
+
+                  i++;
+
+            while (arr[j] > pivot)
+
+                  j--;
+
+            if (i <= j) {
+
+                  tmp = arr[i];
+
+                  arr[i] = arr[j];
+
+                  arr[j] = tmp;
+
+                  i++;
+
+                  j--;
+
+            }
+
+      };
+
+
+
+      /* rekurzivan hivjuk meg a quicksort fuggvenyt
+        a ket tombreszletre */
+
+      if (balindex < j)
+
+            quickSort(arr, balindex, j);
+
+      if (i < jobbindex)
+
+            quickSort(arr, i, jobbindex);
+
+}
