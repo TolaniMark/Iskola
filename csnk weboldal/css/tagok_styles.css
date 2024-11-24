@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #080d10;
+  display: flex;
+  justify-content: space-around;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100vh;
+  max-height: 40%;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.mySlides1, .mySlides2 {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.column {
+  flex: 1 1 12.5%; /* Each thumbnail will take up 12.5% of the width */
+  padding: 5px;
+}
+
+.demo1, .demo2 {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/* Resize images to fit the container */
+.mySlides1 img, .mySlides2 img, .column img {
+  width: 100%; /* Makes sure images fill the container */
+  height: auto; /* Maintains aspect ratio */
+
+}
