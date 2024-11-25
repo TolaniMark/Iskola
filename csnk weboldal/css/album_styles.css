@@ -25,7 +25,7 @@ body {
   align-items: center;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden; /* Hide the overflowing content */
+  overflow: hidden;
 }
 
 .album img {
@@ -41,23 +41,23 @@ body {
   position: absolute;
   margin-left: 300px;
   top: 0;
-  left: 0; /* Initially the songs list is on the left side */
+  left: 0;
   height: 100%;
-  width: 0; /* Initially the width is 0, so it's hidden */
+  width: 0;
   background-color: #080d10;
   overflow-y: auto;
   transition: width 0.5s ease, opacity 0.5s ease;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   z-index: 1;
 }
 
 .album:hover img {
-  transform: translateX(-300px); /* Slide the image to the left on hover */
+  transform: translateX(-300px);
 }
 
 .album:hover .songs {
-  width: 600px; /* Expand the songs list to take up the remaining space */
-  opacity: 1; /* Make the songs list visible */
+  width: 600px;
+  opacity: 1;
 }
 
 .songs a {

@@ -1,10 +1,9 @@
-
 body {
     margin: 0;
     height: 100vh;
     background-image: url('../content/background.png');
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Arial, sans-serif;
@@ -43,7 +42,7 @@ body {
    position: static;
    margin: auto;
    width: 75%;
-   height: 280vh;
+   height: 200vh;
    background-color: #d99999;
    box-sizing: border-box;
 }

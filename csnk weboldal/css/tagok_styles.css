@@ -1,9 +1,11 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #080d10;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 * {
@@ -14,39 +16,56 @@ img {
   vertical-align: middle;
 }
 
+.info {
+  position: static;
+  color: white;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  max-width: 80%;
+  line-height: 1.5;
+  text-align: left;
+}
+
 .container {
   position: relative;
   width: 100%;
-  max-width: 100vh;
-  max-height: 40%;
-  overflow: hidden;
-  margin-top: 100px;
-  margin-left: 50px;
-  margin-right: 50px;
+  max-width: 80%;
+  overflow: visible;
+  margin: 0 auto;
+  padding-bottom: 15px;
 }
 
 .mySlides1, .mySlides2 {
   display: none;
 }
 
-.cursor {
-  cursor: pointer;
+.mySlides1 img, .mySlides2 img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 
 .row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .column {
-  flex: 1 1 12.5%; /* Each thumbnail will take up 12.5% of the width */
+  flex: 1 1 calc(12.5% - 10px);
+  max-width: 100px;
   padding: 5px;
 }
 
 .demo1, .demo2 {
   opacity: 0.6;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .active,
@@ -54,9 +73,12 @@ img {
   opacity: 1;
 }
 
-/* Resize images to fit the container */
-.mySlides1 img, .mySlides2 img, .column img {
-  width: 100%; /* Makes sure images fill the container */
-  height: auto; /* Maintains aspect ratio */
+h2 {
+  font-size: 24px;
+}
 
+p {
+  text-align: justify;
+  font-size: 16px;
+  color: #ccc;
 }

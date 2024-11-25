@@ -1,8 +1,7 @@
 let player;
-let currentVideoId = null; // To track the currently playing video ID
-let isPlaying = false; // To track playback state
+let currentVideoId = null;
+let isPlaying = false;
 
-// Initialize the YouTube API
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('youtubeVideo', {
     events: {
@@ -12,9 +11,7 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-// This function is triggered when the video player state changes
 function onPlayerStateChange(event) {
-  // Check if the player has stopped (STATE 0) or is playing (STATE 1)
   if (event.data === YT.PlayerState.PLAYING) {
     isPlaying = true;
   } else if (event.data === YT.PlayerState.PAUSED) {
@@ -22,29 +19,27 @@ function onPlayerStateChange(event) {
   }
 }
 
-// Add event listeners once the player is ready
 function onPlayerReady() {
-  const videoLinks = document.querySelectorAll('.video-link'); // Select all video links
+  const videoLinks = document.querySelectorAll('.video-link');
 
   videoLinks.forEach(link => {
     link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default navigation behavior
+      e.preventDefault();
 
-      const videoUrl = this.getAttribute('href'); // Get the video URL from the href attribute
-      const videoId = new URL(videoUrl).pathname.split('/').pop(); // Extract the video ID from the URL
+      const videoUrl = this.getAttribute('href');
+      const videoId = new URL(videoUrl).pathname.split('/').pop();
 
       if (videoId === currentVideoId) {
-        // Toggle playback for the currently loaded video
+
         if (isPlaying) {
           player.pauseVideo();
         } else {
           player.playVideo();
         }
       } else {
-        // Load a new video and play it
+
         player.loadVideoById(videoId);
-        currentVideoId = videoId; // Update the current video ID
-        // Do not set isPlaying immediately, let onPlayerStateChange manage it
+        currentVideoId = videoId; 
       }
     });
   });
