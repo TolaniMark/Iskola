@@ -1,0 +1,68 @@
+body {
+  background-color: #080d10;
+}
+
+.tartalom {
+   display: flex;
+   justify-content: center;
+   position: static;
+   margin: auto;
+   width: 75%;
+   height: 200vh;
+   background-color: #d99999;
+   box-sizing: border-box;
+   padding-top: 100px;
+   align-items: center;
+}
+
+.tartalom p {
+  position: relative;
+  margin: 50px;
+}
+
+.doboz {
+  color: #3e3e3e;
+  text-decoration: none;
+  text-align: justify;
+  margin: 50px;
+  background-color: #bfbfbf;
+  border-radius: 50px;
+  border: none;
+  height: 100px;
+  max-height: 100px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.doboz:hover {
+  height: 550px;
+  max-height: 550px;
+}
+
+.doboz h2 {
+  color: #000;
+  padding-left: 15px;
+  margin-top: -10px;
+  z-index: 100;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+}
+
+.doboz h3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  line-height: 150%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, padding-top 0.5s ease-in-out;
+}
+
+.doboz:hover h3 {
+  opacity: 1;
+  padding-top: 20px;
+}
