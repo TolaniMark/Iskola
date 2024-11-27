@@ -1,0 +1,36 @@
+body {
+  background-color: #080d10;
+}
+
+.tartalom {
+   display: flex;
+   justify-content: center;
+   position: static;
+   margin: auto;
+   width: 75%;
+   height: 200vh;
+   background-color: #d99999;
+   box-sizing: border-box;
+   padding-top: 100px;
+   align-items: center;
+}
+
+.tartalom p {
+  position: relative;
+  margin: 50px;
+}
+
+.doboz {
+  color: #3e3e3e;
+  text-decoration: none;
+  text-align: justify;
+  margin: 50px;
+  background-color: #bfbfbf;
+  border-radius: 50px;
+  border: none;
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: none;
+  line-height: 200%;
+}
